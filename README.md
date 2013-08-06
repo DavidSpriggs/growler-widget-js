@@ -23,3 +23,5 @@ Available growl params:
   opacity: 1.0,
 }
 ```
+Screen from Sample page:
+![Screenshot](/screenshot.png)
