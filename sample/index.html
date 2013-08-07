@@ -60,6 +60,9 @@
         position:relative;
         top:1px;
       }
+      pre {
+        white-space: pre-wrap;
+      }
     </style>
     <script type="text/javascript">
         var dojoConfig = {
@@ -190,6 +193,11 @@
           title: "Well done!",
           message: "You successfully read this important alert message.",
           level: "success"
+        });
+        growler.growl({
+          title: "Heads up!",
+          message: "This alert needs your attention, but it's not super important.",
+          level: "info"
         });
         growler.growl({
           title: "Default!",
