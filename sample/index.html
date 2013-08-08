@@ -31,7 +31,7 @@
         z-index: 40;
         padding: 5px;
         border: 1px solid #B5BCC7;
-        width: 500px;
+        
         background-color: #FFF;
         -webkit-border-radius: 4px;
         border-radius: 4px;
@@ -77,12 +77,18 @@
   </head>
   <body>
     <div class="menuLeft">
-      <h3>Growler tests:</h3>
+      <h3>Growler tests (10 second timeout):</h3>
       <a href="#" class="buttonGlass" id="warning">Warining</a>
       <a href="#" class="buttonGlass" id="success">Success</a>
       <a href="#" class="buttonGlass" id="error">Error</a>
       <a href="#" class="buttonGlass" id="info">Info</a>
       <a href="#" class="buttonGlass" id="default">Default</a>
+      <h3>Growler tests (no timeout):</h3>
+      <a href="#" class="buttonGlass" id="warning2">Warining</a>
+      <a href="#" class="buttonGlass" id="success2">Success</a>
+      <a href="#" class="buttonGlass" id="error2">Error</a>
+      <a href="#" class="buttonGlass" id="info2">Info</a>
+      <a href="#" class="buttonGlass" id="default2">Default</a>
       <h3>Styles:</h3>
       <div class="gis-dijit-Growl">
         <div class="growl warning">
@@ -114,7 +120,7 @@
     </div>
     <div id="map"></div>
     <script>
-      require(['esri/map', 'js/Growler', 'dojo/dom', 'dojo/on', 'dojo/domReady!'], function(Map, Growler, dom, on) {
+      require(['esri/map', 'js/Growler', 'dojo/dom', 'dojo/on'], function(Map, Growler, dom, on) {
 
         //create the growler
         var growler = new Growler({}, "growlerDijit");
@@ -168,7 +174,51 @@
           });
         });
 
-        //fires some tests
+        on(dom.byId('warning2'), 'click', function() {
+          growler.growl({
+            title: "Warning!",
+            message: "Best check yo self, you're not looking too good.",
+            level: "warning",
+            timeout: 0
+          });
+        });
+
+        on(dom.byId('error2'), 'click', function() {
+          growler.growl({
+            title: "Oh snap!",
+            message: "Change a few things up and try submitting again.",
+            level: "error",
+            timeout: 0
+          });
+        });
+
+        on(dom.byId('success2'), 'click', function() {
+          growler.growl({
+            title: "Well done!",
+            message: "You successfully read this important alert message.",
+            level: "success",
+            timeout: 0
+          });
+        });
+
+        on(dom.byId('info2'), 'click', function() {
+          growler.growl({
+            title: "Heads up!",
+            message: "This alert needs your attention, but it's not super important.",
+            level: "info",
+            timeout: 0
+          });
+        });
+
+        on(dom.byId('default2'), 'click', function() {
+          growler.growl({
+            title: "Default!",
+            message: "Need higher contrast? Got you covered.",
+            timeout: 0
+          });
+        });
+
+        //fire some tests
 
         // Available growl params:
         // {
@@ -201,8 +251,7 @@
         });
         growler.growl({
           title: "Default!",
-          message: "Need higher contrast? Got you covered.",
-          timeout: 0
+          message: "Need higher contrast? Got you covered."
         });
       });
     </script>
