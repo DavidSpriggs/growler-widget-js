@@ -25,4 +25,4 @@ Available growl params:
 ```
 Screen from Sample page:
 
-![Screenshot](https://raw.github.com/ArcGIS/growler-widget-js/master/screenshot.PNG?login=DavidSpriggs&token=c97f566bbf6eed33884bc2a88d1f977d)
+![Screenshot](https://raw.github.com/DavidSpriggs/growler-widget-js/master/screenshot.PNG)
