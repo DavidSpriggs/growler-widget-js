@@ -1,7 +1,7 @@
 growler-widget-js
 =================
 
-Growl notifications widget for the js api. [demo](http://psstldemo3.esri.com/apps/growler/sample/)
+Growl notifications widget for the js api. [demo page](http://davidspriggs.github.io/growler-widget-js/sample/)
 
 ```javascript
 var growler = new Growler({}, "growlerDijit");
